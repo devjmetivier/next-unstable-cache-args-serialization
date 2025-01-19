@@ -1,11 +1,19 @@
+import { NuqsAdapter } from 'nuqs/adapters/next/app';
+
+import './globals.css';
+
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <NuqsAdapter>
+          {children}
+        </NuqsAdapter>
+      </body>
     </html>
   );
 }
